@@ -13,7 +13,7 @@ const reviewSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-} {
+}, {
     timestamps: true,
 });
 
@@ -70,4 +70,4 @@ const productScehma = mongoose.Schema({
 
 const Product = mongoose.model('product', productScehma);
 
-export default Prduct;
+export default Product;

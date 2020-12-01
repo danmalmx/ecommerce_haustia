@@ -37,17 +37,17 @@ const orderScehma = mongoose.Schema({
         email_address: {type: String}, 
     },
     taxPrice: {
-        type: number, 
+        type: Number, 
         required: true, 
         default: 0.0,
     },
     shippingPrice: {
-        type: number, 
+        type: Number, 
         required: true, 
         default: 0.0,
     },
     totalPrice: {
-        type: number, 
+        type: Number, 
         required: true, 
         default: 0.0,
     },

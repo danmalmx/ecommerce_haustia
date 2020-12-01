@@ -17,5 +17,6 @@ const users = [
         email: 'miss@piggy.com',
         password: brcypt.hashSync('123456', 10),
     },
-
 ]
+
+export default users;
