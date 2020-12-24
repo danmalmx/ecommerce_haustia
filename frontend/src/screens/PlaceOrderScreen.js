@@ -13,7 +13,6 @@ const PlaceOrderScreen = () => {
     }
 
     const priceOfItems = (cart.cartItems.reduce((acc, item) => (acc + item.price * item.qty), 0).toFixed(2));
-    const vat = addDecimal(Number(priceOfItems - (priceOfItems / 1.15)).toFixed(2));
     
     cart.itemPrice = addDecimal(priceOfItems - cart.vat);
     cart.shippingPrice = priceOfItems > 100 ? 0 : 100;
