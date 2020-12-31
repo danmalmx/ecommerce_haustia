@@ -51,13 +51,11 @@ const OrderScreen = ({ match }) => {
             }
         }
 
-
     }, [dispatch, orderId, successPay, order]);
 
     const sucessPaymentHandler = (paymentResult) => {
         console.log(paymentResult)
         dispatch(payOrder(orderId, paymentResult));
-        
     }
 
     return loading ? <Loader /> : error ? <Message variant="danger">{{error}}</Message> :
@@ -145,18 +143,6 @@ const OrderScreen = ({ match }) => {
                                     <Col>€{order.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
-                            {/* {!order.isPaid && ( 
-                                <ListGroup.Item>
-                                    {loadingPay && <Loader /> }
-                                    {!sdkReady ? 
-                                        <Loader /> 
-                                    : (
-                                        <PayPalButton 
-                                            amount="{order.totalPrice}"
-                                            onSuccess={successPaymentHandler}
-                                        />
-                                )}   
-                            </ListGroup.Item>)} */}
                             {!order.isPaid && (
                             <ListGroup.Item>
                                 {loadingPay && <Loader />}
