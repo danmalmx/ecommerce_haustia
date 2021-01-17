@@ -3,24 +3,24 @@ import bcrypt from 'bcryptjs'
 
 const userScehma = mongoose.Schema({
     name: {
-        type: String, 
+        type: String,
         required: true,
     },
     email: {
-        type: String, 
+        type: String,
         required: true,
         unique: true,
     },
     password: {
-        type: String, 
+        type: String,
         required: true
     },
     name: {
-        type: String, 
+        type: String,
         required: true
     },
     isAdmin: {
-        type: String, 
+        type: String,
         required: true,
         default: false,
     },
@@ -29,7 +29,7 @@ const userScehma = mongoose.Schema({
 });
 
 userScehma.methods.matchPassword = async function(enteredPassword) {
-    return await bcrypt.compare(enteredPassword, this.password)    
+    return await bcrypt.compare(enteredPassword, this.password)
 }
 
 userScehma.pre('save', async function(next) {
@@ -41,6 +41,6 @@ userScehma.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, salt);
 })
 
-const User = mongoose.model('user', userScehma);
+const User = mongoose.model('User', userScehma);
 
 export default User;

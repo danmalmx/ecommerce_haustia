@@ -24,43 +24,43 @@ const productScehma = mongoose.Schema({
         ref: 'User'
     },
     name: {
-        type: String, 
+        type: String,
         required: true,
     },
     image: {
-        type: String, 
+        type: String,
         required: true,
     },
     brand: {
-        type: String, 
+        type: String,
         required: true
     },
     category: {
-        type: String, 
+        type: String,
         required: true
     },
     description: {
-        type: String, 
+        type: String,
         required: true,
     },
-    reviews: [reviewSchema], 
+    reviews: [reviewSchema],
     rating: {
-        type: Number, 
+        type: Number,
         required: true,
         default: 0,
     },
     numReviews: {
-        type: Number, 
+        type: Number,
         required: true,
         default: 0,
     },
     price: {
-        type: Number, 
+        type: Number,
         required: true,
         default: 0,
     },
     countInStock: {
-        type: Number, 
+        type: Number,
         required: true,
         default: 0,
     },
@@ -68,6 +68,6 @@ const productScehma = mongoose.Schema({
     timestamps: true,
 })
 
-const Product = mongoose.model('product', productScehma);
+const Product = mongoose.model('Product', productScehma);
 
 export default Product;

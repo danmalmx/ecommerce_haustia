@@ -52,7 +52,6 @@ const getOrderById = asyncHandler(async(req, res) => {
         res.status(400);
         throw new Error('Order not found');
     }
-
 })
 
 // description: Update order to paid
@@ -79,7 +78,6 @@ const updateorderToPaid = asyncHandler(async(req, res) => {
         res.status(400);
         throw new Error('Order not found');
     }
-
 })
 
 // description: Get logged in user orders
@@ -89,19 +87,15 @@ const updateorderToPaid = asyncHandler(async(req, res) => {
 const getMyOrders = asyncHandler(async(req, res) => {
     const orders = await Order.find({ user: req.user.id});
     res.json(orders);
-
 })
 
-export { addOrderItems, getOrderById, updateorderToPaid, getMyOrders }
-
 // description: Get all orders
-// route :      GET /api/orders/
+// route :      GET /api/orders
 // access:      Private/Admin
 
 const getOrders = asyncHandler(async(req, res) => {
     const orders = await Order.find().populate('user', 'id name');
     res.json(orders);
-
 })
 
 export { addOrderItems, getOrderById, updateorderToPaid, getMyOrders, getOrders }
