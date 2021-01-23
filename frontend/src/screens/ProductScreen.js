@@ -115,7 +115,6 @@ const ProductScreen = ({ history, match }) => {
                                                         >{x + 1}
                                                     </option>
                                                 )))}
-
                                             </Form.Control>
                                         </Col>
                                     </Row>
